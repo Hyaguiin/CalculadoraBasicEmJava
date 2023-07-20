@@ -1,0 +1,88 @@
+import java.util.Scanner;
+public class CalculadoraWhile {
+    static String opcoes;
+
+    public static void main(String[] arguments) throws InterruptedException {
+        while(true) {
+            timer();
+            Menuu();
+            opcoes = Input();
+            if(opcoes.equals("+")) {
+                sum();
+            }
+            else if(opcoes.equals("-")){
+                minus();
+            }
+            else if(opcoes.equals("*")){
+                multiply();
+            }
+            else if(opcoes.equals("/")){
+                divide();
+            }
+            else if(opcoes.equals("0")){
+                System.out.print("Thank you for test my Program!");
+                break;
+            }
+            else{
+                System.out.println("Please, Select a valid math operation...");
+            }
+
+        }
+        }
+    static String Input() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("What Math Operation do you Want?[0 for exit] \n--> ");
+        String Operacao = scanner.nextLine();
+
+        return Operacao;
+    }
+    static void Menuu() {
+        String menu = " + For Sum \n- For Minus \n* for multiply \n / for divide";
+        System.out.println("========================");
+        System.out.println("Welcome to the Calculator!");
+        System.out.println(menu);
+        System.out.println("========================");
+    }
+    static void sum() {
+        Scanner soma = new Scanner(System.in);
+        System.out.print("Please, select the first number for Operation \n--> ");
+        int number1 = soma.nextInt();
+        System.out.print("Please, select the second number for Operation \n--> ");
+        int number2 = soma.nextInt();
+        System.out.println("The result of sum is: " + (number1 + number2));
+
+    }
+    static void minus() {
+        Scanner minus = new Scanner(System.in);
+        System.out.print("Please, select the first number for Operation \n--> ");
+        int number1 = minus.nextInt();
+        System.out.print("Please, select the second number for Operation \n--> ");
+        int number2 = minus.nextInt();
+        System.out.println("The result of minus is: " + (number1 - number2));
+
+    }
+    static void multiply() {
+        Scanner multiply = new Scanner(System.in);
+        System.out.print("Please, select the first number for Operation \n--> ");
+        int number1 = multiply.nextInt();
+        System.out.print("Please, select the second number for Operation \n--> ");
+        int number2 = multiply.nextInt();
+        System.out.println("The result of multiply is: " + (number1 * number2));
+
+    }
+    static void divide() {
+        Scanner divide = new Scanner(System.in);
+        System.out.print("Please, select the first number for Operation \n--> ");
+        int number1 = divide.nextInt();
+        System.out.print("Please, select the second number for Operation \n--> ");
+        int number2 = divide.nextInt();
+        System.out.println("The result of divide is: " + (number1 / number2));
+    }
+    static void timer() throws InterruptedException {
+        for(int i = 0; i < 3; i++ ){
+            System.out.println(".");
+            Thread.sleep(300);
+        }
+
+}
+}
